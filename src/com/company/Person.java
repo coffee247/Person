@@ -5,8 +5,14 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Objects;
 
-
-public abstract class Person implements Serializable{
+/**
+ * Person implements Serializable because ...
+ * Serialization is a mechanism of converting the state of an object into a byte stream.
+ * so that it can be transmitted over the internet.
+ * see https://www.javatpoint.com/q/1940/what-is-advantage-and-disadvantage-of-serialization
+ * Person is abstract so that it can be extended by Manager, Donor, etc...
+ */
+public abstract class Person implements Serializable {
     private Integer ID = 0;
     private static int personCount = 0;
     private String firstName = "";
@@ -45,6 +51,10 @@ public abstract class Person implements Serializable{
             this.firstName = firstName;
             setLastModified();
         }
+    }
+
+    public void setEmailAddress(String email){
+        this.email = email;
     }
 
 
