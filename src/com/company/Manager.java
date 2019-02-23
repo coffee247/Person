@@ -1,6 +1,6 @@
 package com.company;
 
-public class Manager extends Person {
+public class Manager extends Volunteer {
 
     public Manager(){
 
