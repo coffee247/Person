@@ -124,6 +124,10 @@ public abstract class Person implements Serializable {
     }
 
 
+    public String getEmail() {
+        return email;
+    }
+
     public LocalDate getCreationDate() {
         return creationDate;
     }

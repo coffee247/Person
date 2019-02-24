@@ -13,9 +13,10 @@ public class Main {
         for (int a = 1; a < 5; a++) {
             Manager myNewManager = new Manager("James", "M.", "Stallings");
             personController.AddManager(myNewManager);
+            myNewManager.setEmailAddress("stallingsjm@mymail.vcu.edu");
         }
 
-        personController.Managers.forEach((k,v)->System.out.println("Manager ID: "+k+" is "+v.getFullName()));
+        personController.Managers.forEach((k,v)->System.out.println("Manager ID: "+k+" is "+v.getFullName()+" and has email address: "+v.getEmail()));
 
 
 

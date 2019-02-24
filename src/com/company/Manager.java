@@ -12,7 +12,15 @@ public class Manager extends Volunteer {
         setLastName(lastName);
     }
 
+    @Override
+    public void setEmailAddress(String email) {
+        super.setEmailAddress(email);
+    }
 
+    @Override
+    public String getEmail() {
+        return super.getEmail();
+    }
     // ADD code specific to Managers here.
 
 }
