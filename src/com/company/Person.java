@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Objects;
 
+import static java.util.Objects.requireNonNullElse;
+
 /**
  * Person implements Serializable because ...
  * Serialization is a mechanism of converting the state of an object into a byte stream.
@@ -42,7 +44,7 @@ public abstract class Person implements Serializable {
     }
 
     public Sex getSex(){
-        return Objects.requireNonNullElse(this.sex, Sex.Un_Specified);
+        return requireNonNullElse(this.sex, Sex.Un_Specified);
     }
 
 

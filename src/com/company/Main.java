@@ -20,8 +20,6 @@ public class Main {
 
 
 
-
-
         //Making and listing sample Donors here
         for (int a = 1; a < 5; a++) {
             Donor myNewDonor = new Donor("Barry", "D.", "Stallings");
