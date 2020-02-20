@@ -8,14 +8,10 @@ import java.util.Objects;
 import static java.util.Objects.requireNonNullElse;
 
 /**
- * Person implements Serializable because ...
- * Serialization is a mechanism of converting the state of an object into a byte stream.
- * so that it can be transmitted over the internet.
- * see https://www.javatpoint.com/q/1940/what-is-advantage-and-disadvantage-of-serialization
  * Person is abstract so that it can be extended by Manager, Donor, etc...
  */
-public abstract class Person implements Serializable {
-    private Integer ID = 0;
+public abstract class Person {
+    private Integer ID;
     private static int personCount = 0;
     private String firstName = "";
     private String middleName = "";

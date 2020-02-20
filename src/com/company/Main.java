@@ -1,5 +1,7 @@
 package com.company;
 
+import javax.lang.model.type.NullType;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,40 +13,41 @@ public class Main {
 
         // Making and listing sample Managers here
         for (int a = 1; a < 5; a++) {
-            Manager myNewManager = new Manager("James", "M.", "Stallings");
+            Manager myNewManager = new Manager("James"+a, "Michael", "Stallings");
             personController.AddManager(myNewManager);
             myNewManager.setEmailAddress("stallingsjm@mymail.vcu.edu");
+            myNewManager.setDepartment("test Department" + a);
         }
 
-        personController.Managers.forEach((k,v)->System.out.println("Manager ID: "+k+" is "+v.getFullName()+" and has email address: "+v.getEmail()));
+        personController.Managers.forEach((k,v)->System.out.println("Person ID: " + k + " is Manager ID: "+v.getManagerID()+" who is known as "+
+                v.getFullName()+" and has email address: "+v.getEmail() + " and is in Department: "+v.getDepartment()));
 
 
 
         //Making and listing sample Donors here
         for (int a = 1; a < 5; a++) {
-            Donor myNewDonor = new Donor("Barry", "D.", "Stallings");
+            Donor myNewDonor = new Donor("Barry", "D.", "Stallings"+a);
             personController.AddDonors(myNewDonor);
         }
 
         // Getting more data from EACH Donor
-        // (CreationDate and CreationTime were set automatically in PersonClass Constructor.)
-        personController.Donors.forEach((k,v)->System.out.println("Donor ID: "+k+" is "+v.getFullName()+". " +
-                "The record was created on "+v.getCreationDate()+" at "+v.getCreationTime()));
+        personController.Donors.forEach((k,v)->System.out.println("Person ID: " + k + " is Donor ID: "+v.getDonor_ID()+" who is known as "+
+                v.getFullName()+" and has email address: "+v.getEmail()));
 
 
-
-
-
+        Volunteer myNewVolunteer = new Volunteer(); // make an unknown (anonymous) volunteer
+        myNewVolunteer.setEmailAddress("adumbadress@dummy.com");
+        personController.AddVolunteer(myNewVolunteer);
 
 
         //Making and listing sample Volunteers here
         for (int a = 1; a < 5; a++) {
-            Volunteer myNewVolunteer = new Volunteer("Frederick", "R.", "Stallings");
+            myNewVolunteer = new Volunteer("Frederick", "R.", "Stallings");
             personController.AddVolunteer(myNewVolunteer);
         }
 
-        personController.Volunteers.forEach((k,v)->System.out.println("Volunteer ID: "+k+" is "+v.getFullName()));
-
-
+        // Print data from EACH Volunteer
+        personController.Volunteers.forEach((k,v)->System.out.println("Person ID: " + k + " is Volunteer ID: "+v.getVolunteer_ID()+" who is known as "+
+                v.getFullName()+" and has email address: "+v.getEmail()));
     }
 }
