@@ -18,33 +18,16 @@ public class Manager extends Person {
 
     }
 
-    @Override
-    public void setEmailAddress(String email)
-    {
-        super.setEmailAddress(email);
-    }
-
-    @Override
-    public String getEmail()
-    {
-        return super.getEmail();
-    }
-
-    public void setDepartment(String dept)
-    {
-        Department = dept;
-    }
-
-    public String getDepartment()
-    {
+    public String getDepartment() {
         return Department;
     }
 
-    public int getManagerID()
-    {
+    public int getManager_ID() {
         return manager_ID;
     }
-        // ADD code specific to Managers here.
 
+    public void setDepartment(String department) {
+        Department = department;
+    }
 }
 
